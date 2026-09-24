@@ -15,5 +15,16 @@ public class Main {
         System.out.println("Preorden  (raíz, izquierda, derecha): " + arbol.preorden());
         System.out.println("Inorden   (izquierda, raíz, derecha): " + arbol.inorden());
         System.out.println("Postorden (izquierda, derecha, raíz): " + arbol.postorden());
+
+        String preorden = "GEAIBMCLDFKJH";
+        String inorden = "IABEGLDCFMKHJ";
+        ArbolBinario arbolReconstruido = ArbolBinario.desdeRecorridos(preorden, inorden);
+
+        System.out.println("\n=== ÁRBOL RECONSTRUIDO ===");
+        System.out.println("Preorden: " + preorden);
+        System.out.println("Inorden:  " + inorden);
+        arbolReconstruido.mostrar();
+        System.out.println("Postorden: "
+                + ArbolBinario.postordenDesdeRecorridos(preorden, inorden));
     }
 }
